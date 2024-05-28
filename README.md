@@ -13,13 +13,33 @@
 * Lombok
 * Java 21
 * Maven
-
-# Необходимые параметры конфигурации
-
-* vk.api.token - Токен сообщества
-* vk.api.version - Версия API VK
+* Docker
 
 # Как запустить?
+## Шаг 1: Скачать проект
+### Скачайте проект с помощью Git:
+```cmd
+git clone <url проекта>
+```
+### Перейдите в директорию проекта:
+```cmd
+cd <название_проекта>
+```
+## Шаг 2: Сборка проекта
+### Выполните сборку проекта с помощью Maven:
+```cmd
+mvn clean package
+```
+## Шаг 3: Создание Docker-образа
+### Создайте Docker-образ на основе Dockerfile:
+```cmd
+mvn clean package
+```
 
-1. В application.properties ввести свои параметры
-2. Запустить проект
+## Шаг 4: Запуск Docker-контейнера
+### Запустите Docker-контейнер с необходимыми параметрами, такими как токен VK API и версия VK API:
+```cmd
+docker run -d -p 8080:8080 -e VK_API_TOKEN="your_vk_api_token" -e VK_API_VERSION="5.236" my-spring-app
+```
+# Теперь  Spring приложение доступно по адресу http://localhost:8080.
+
